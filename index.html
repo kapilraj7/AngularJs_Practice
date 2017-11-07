@@ -5,19 +5,16 @@
 
 <div ng-app="myApp" ng-controller="customersCtrl"> 
 
-<ul>
-
-<!--JSON data is an array of objects, ng-repeat is best for fetch data from array-->
-
-  <li ng-repeat="x in myData">
-
-<!--get object keys from the array in JSON file-->
-
-    {{ x.Name + ', ' + x.Country }}
-
-  </li>
-
-</ul>
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Country</th>
+</tr>
+  <tr ng-repeat="x in names">
+    <td>{{ x.Name }}</td>
+    <td>{{ x.Country }}</td>
+  </tr>
+</table>
 
 </div>
 
