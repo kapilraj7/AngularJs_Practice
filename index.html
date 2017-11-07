@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl"> 
+
+<ul>
+
+<!--JSON data is an array of objects, ng-repeat is best for fetch data from array-->
+
+  <li ng-repeat="x in myData">
+
+<!--get object keys from the array in JSON file-->
+
+    {{ x.Name + ', ' + x.Country }}
+
+  </li>
+
+</ul>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
