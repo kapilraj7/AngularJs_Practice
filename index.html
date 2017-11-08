@@ -16,9 +16,9 @@ table, th, td  {
 <tr>
 <th>No.</th>
 <th>Name</th>
-<th>Country</th>
+<th ng-click="AscendOrder('Country')">Country</th>
 </tr>
-  <tr ng-repeat="x in names | orderBy:'Name'">
+  <tr ng-repeat="x in names | orderBy:MakeOrderBy">
     <td>{{ $index + 1 }}</td>
     <td ng-if="$odd" style="background-color:#f1f1f1">
     {{ x.Name }}</td>
