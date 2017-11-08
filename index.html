@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html>
+<style>
+table, th, td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <body>
 
 <div ng-app="myApp" ng-controller="customersCtrl"> 
 
-<table border="1">
+<table>
 <tr>
-<th>No.</th><th>Name</th>
+<th>No.</th>
+<th>Name</th>
 <th>Country</th>
 </tr>
-  <tr ng-repeat="x in names">
-  <td>{{ $index + 1 }}</td>  <td>{{ x.Name }}</td>
-    <td>{{ x.Country }}</td>
+  <tr ng-repeat="x in names | orderBy:'Name'">
+    <td>{{ $index + 1 }}</td>
+    <td ng-if="$odd" style="background-color:#f1f1f1">
+    {{ x.Name }}</td>
+    <td ng-if="$even">
+    {{ x.Name }}</td>
+    <td ng-if="$odd" style="background-color:#f1f1f1">
+    {{ x.Country }}</td>
+    <td ng-if="$even">
+    {{ x.Country }}</td>
   </tr>
 </table>
 
 </div>
-
 <script src="script.js"></script>
-
 </body>
 </html>
